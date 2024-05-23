@@ -6,7 +6,7 @@ This project is an animated scenery created for a university assignment using D3
     Fluffy clouds
     A green tree
     A bright sun
-    A road with moving cars
+    A road with cars
     A peaceful sky
 
 The main animations are focused on the car lights and the white path markings on the road. This project demonstrates the use of D3.js to add dynamic elements to a tranquil countryside setting.
