@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+<head>
+	<title>Q2</title>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+        <style>
+        body {
+  background-color: skyblue;
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0">
+             <linearGradient id="Skychange">
+            <stop offset="0" stop-color="deepskyblue">
+              <animate dur="0.25s" attributeName="offset" fill="" from="1" to="0"  />
+            </stop>
+            <stop  stop-color="skyblue">
+              <animate dur="1.2s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="Skychange1">
+            <stop offset="0" stop-color="skyblue">
+              <animate dur="0.25s" attributeName="offset" fill="freeze" from="0" to="1"  />
+            </stop>
+            <stop  stop-color="deepskyblue">
+              <animate dur="1.2s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="housechange">
+            <stop offset="0" stop-color="deepskyblue">
+              <animate dur="0.4s" attributeName="offset" fill="freeze" from="1" to="0"  />
+            </stop>
+            <stop  stop-color="palegoldenrod">
+              <animate dur="1.2s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+          
+             <linearGradient id="treechange">
+            <stop offset="0" stop-color="deepskyblue">
+              <animate dur="0.4s" attributeName="offset" fill="freeze" from="1" to="0"  />
+            </stop>
+            <stop  stop-color="green">
+              <animate dur="1.2s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="treechange1">
+            <stop offset="0" stop-color="green">
+              <animate dur="0.4s" attributeName="offset" fill="freeze" from="0" to="1"  />
+            </stop>
+            <stop  stop-color="deepskyblue">
+              <animate dur="1.2s"  fill="freeze" from="0" to="1"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="roadch">
+            <stop offset="0" stop-color="deepskyblue">
+              <animate dur="0.7s" attributeName="offset" fill="freeze" from="1" to="0"  />
+            </stop>
+            <stop  stop-color="dimgray">
+              <animate dur="1.2s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="roadch1">
+            <stop offset="0" stop-color="dimgray">
+              <animate dur="0.7s" attributeName="offset" fill="freeze" from="0" to="1"  />
+            </stop>
+            <stop  stop-color="deepskyblue">
+              <animate dur="5s"  fill="freeze" from="0" to="1"  />
+            </stop>
+          </linearGradient>
+         
+             <linearGradient id="LandCh">
+            <stop offset="0" stop-color="deepskyblue">
+              <animate dur="0.56s" attributeName="offset" fill="freeze" from="1" to="0"  />
+            </stop>
+            <stop  stop-color="sienna">
+              <animate dur="5s"  fill="freeze" from="1" to="0"  />
+            </stop>
+          </linearGradient>
+             <linearGradient id="LandCh1">
+            <stop offset="0" stop-color="sienna">
+              <animate dur="0.56s" attributeName="offset" fill="freeze" from="0" to="1"  />
+            </stop>
+            <stop  stop-color="deepskyblue">
+              <animate dur="5s"  fill="freeze" from="0" to="1"  />
+            </stop>
+          </linearGradient>
+ 
+             <linearGradient id="DirectionOfRoad">
+            <stop offset="0" stop-color="white">
+              <animate dur="1.4s" attributeName="offset" fill="freeze" from="0" to="1" repeatCount="indefinite"/>
+            </stop>
+            <stop  stop-color="dimgray">
+              <animate dur="1.2s"  fill="freeze" from="0" to="1" repeatCount="indefinite"/>
+            </stop>
+          </linearGradient>
+            <linearGradient id="CarLightChange">
+            <stop offset="0" stop-color="yellow">
+              <animate dur="0.5s" attributeName="offset" fill="freeze" from="0" to="1" repeatCount="indefinite"/>
+            </stop>
+            <stop  stop-color="white">
+              <animate dur="1.2s"  fill="freeze" from="0" to="1" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+
+</svg>
+<script>
+
+var svg = d3.select("body")
+.append("svg")
+        .attr("viewBox", "0 0 200 100");
+       
+//land        
+svg.append("path")
+                .attr("d", "M0 70 h210 v50 h-210 v-50")
+                .attr("stroke", "sienna")
+                .attr("stroke-width", 0.4)
+                .attr("fill", "sienna");       
+// grass
+svg.append("path")
+                .attr("d", "M0 70 l1 -2 l1 2 l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  l1 -2 l1 2  ")
+                .attr("stroke", "green")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "green");       
+// House
+svg.append("path")
+                .attr("d", "M30 40 L42 25 L58 40 h-28 M42 25 h50 v15 h-35 ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "darkred");       
+svg.append("path")
+                .attr("d", "M92 40 v30 h-34 v-30")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "palegoldenrod");       
+svg.append("path")
+                .attr("d", "M30 40 v30 h28 v-30")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "palegoldenrod");       
+// House Hole
+svg.append("circle")
+                .attr("cx", "43")
+                .attr("cy", "35")
+                .attr("r", "3")
+                .attr("stroke", "antiquewhite")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "antiquewhite");       
+// House Door
+svg.append("path")
+                .attr("d", "M40 50 v20 h10 v-20h-10")
+                .attr("stroke", "brown")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "brown");       
+// Door Handle
+svg.append("circle")
+                .attr("cx", "48")
+                .attr("cy", "60")
+                .attr("r", "1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "black");       
+// House Window
+svg.append("path")
+                .attr("d", "M70 50  h12 v10 h-12 v-5 h12 v1 h-12 v-6 h5.5 v10 h1 v-10")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.2)
+                .attr("fill", "antiquewhite");       
+svg.append("path")
+                .attr("d", "M70 55 h12 v1 h-12 v-1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.1)
+                .attr("fill", "palegoldenrod");       
+// Trees
+svg.append("path")
+                .attr("d", "M119 70 v-10 h-11 L112 52 h-2 L114 42 h-2 L116 32 h-2 L120 22 L126 32 h-2 L128 42 h-2 L130 52 h-2 L132 60 h-11 v10")
+                .attr("stroke", "green")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "green");       
+svg.append("path")
+                .attr("d", d="M149 70 v-10 h-11 L142 52 h-2 L144 42 h-2 L146 32 h-2 L150 22 L156 32 h-2 L158 42 h-2 L160 52 h-2 L162 60 h-11 v10")
+                .attr("stroke", "green")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "green");       
+svg.append("path")
+                .attr("d", "M179 70 v-10 h-11 L172 52 h-2 L174 42 h-2 L176 32 h-2 L180 22 L186 32 h-2 L188 42 h-2 L190 52 h-2 L192 60 h-11 v10")
+                .attr("stroke", "green")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "green");       
+svg.append("path")
+                .attr("d", "M12 70 v-10 h-11 L5 52 h-2 L7 42 h-2 L9 32 h-2 L11.5 22 L17.5 32 h-2 L19.5 42 h-2 L21.5 52 h-2 L23.5 60 h-9.5 v10")
+                .attr("stroke", "green")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "green");       
+//green rain
+svg.append("path")
+                .attr("d", "M20 47 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#treechange1)"); 
+svg.append("path")
+                .attr("d", "M118 47 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#treechange1)"); 
+//brown rain
+svg.append("path")
+                .attr("d", "M20 73 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", " url(#LandCh1)"); 
+svg.append("path")
+                .attr("d", "M34 73 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", " url(#LandCh)"); 
+svg.append("path")
+                .attr("d", "M118 73 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", " url(#LandCh1)"); 
+svg.append("path")
+                .attr("d", "M134 73 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", " url(#LandCh)"); 
+
+// skyblue rain
+svg.append("path")
+                .attr("d", "M20 24 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#Skychange1)"); 
+svg.append("path")
+                .attr("d", "M134 24 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#Skychange)"); 
+svg.append("path")
+                .attr("d", "M118 24 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#Skychange1)"); 
+// aquawhite
+svg.append("path")
+                .attr("d", "M34 47 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#housechange)"); 
+svg.append("path")
+                .attr("d", "M134 47 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#Skychange)"); 
+
+// skyblue rain
+svg.append("path")
+                .attr("d", "M34 24 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#Skychange)"); 
+// road
+svg.append("path")
+                .attr("d", "M0 80 h210 v17 h-210 v-16")
+                .attr("stroke", "dimgray")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "dimgray");       
+     
+// 1 Car Body
+svg.append("path")
+                .attr("d", "M60 86 l5 -5 h7 l5 5 h-22 l-4 6 h8 l2 -2 h3 l2 2 h6 l2 -2 h3 l2 2 h8 l5 -6 h-15")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "red");
+
+// 1 Cars Tyres
+svg.append("circle")
+                .attr("cx", "62.5")
+                .attr("cy", "92.5")
+                .attr("r", "2")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.7)
+                .attr("fill", "none");       
+svg.append("circle")
+                .attr("cx", "75.5")
+                .attr("cy", "92.5")
+                .attr("r", "2")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.7)
+                .attr("fill", "none");       
+// 1 Car Tyres Interior
+svg.append("path")
+                .attr("d", "M63 90.8 v3.5 M62.4 90.5 v3.8 M60.8 92.2 h3.6 M60.8 92.8 h3.6 ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "none");       
+svg.append("path")
+                .attr("d", " M76 90.8 v3.5 M75.3 90.5 v3.8  M73.8 92.8 h3.6 M73.8 92.2 h3.6")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "none");       
+
+// 1 Cars Lights
+
+svg.append("circle")
+                .attr("cx", "86.3")
+                .attr("cy", "90")
+                .attr("r", "1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#CarLightChange)");       
+svg.append("circle")
+                .attr("cx", "88.5")
+                .attr("cy", "87.5")
+                .attr("r", "1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#CarLightChange)");       
+// 1 car light lines
+svg.append("path")
+                .attr("d", "M88 86.5 v2  M88.5 86.5 v2 M89 86.5 v2")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.2)
+                .attr("fill", "none");       
+svg.append("path")
+                .attr("d", "M85.8 89 v2 M86.4 89 v2  M86.9 89 v2   ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.2)
+                .attr("fill", "none");       
+
+// 2 Car Body
+svg.append("path")
+                .attr("d", "M165 86 l5 -5 h7 l5 5 h-22 l-4 6 h8 l2 -2 h3 l2 2 h6 l2 -2 h3 l2 2 h8 l5 -6 h-15")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "goldenrod");       
+// 2 Cars Tyres
+svg.append("circle")
+                .attr("cx", "180.5")
+                .attr("cy", "92.5")
+                .attr("r", "2")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.7)
+                .attr("fill", "none");       
+svg.append("circle")
+                .attr("cx", "167.5")
+                .attr("cy", "92.5")
+                .attr("r", "2")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.7)
+                .attr("fill", "none");       
+// 2 Car Tyres Interior
+svg.append("path")
+                .attr("d", " M180.9 90.8 v3.5 M180.2 90.5 v3.8 M178.5 92.2 h3.6 M178.5 92.8 h3.6 ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "none");       
+svg.append("path")
+                .attr("d", " M167.9 90.8 v3.5 M167.2 90.5 v3.8 M165.5 92.2 h3.6 M165.5 92.8 h3.6 ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "none");       
+
+// 2 Cars Lights
+
+svg.append("circle")
+                .attr("cx", "193.5")
+                .attr("cy", "87.5")
+                .attr("r", "1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#CarLightChange)");       
+svg.append("circle")
+                .attr("cx", "191.5")
+                .attr("cy", "90")
+                .attr("r", "1")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#CarLightChange)");       
+// 2 car light lines
+svg.append("path")
+                .attr("d", "M193 86.5 v2  M194 86.5 v2 M193.5 86.5 v2 ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.2)
+                .attr("fill", "none");       
+svg.append("path")
+                .attr("d", "M190.83 89 v2 M191.4 89 v2  M191.8 89 v2  ")
+                .attr("stroke", "black")
+                .attr("stroke-width", 0.2)
+                .attr("fill", "none");       
+
+// CLoud 1
+svg.append("path")
+                .attr("d", "M10 7 A 1.2 1, 0, 1 1, 25 7 M25 7 A 1.1 1, 0, 1 1, 40 7 ")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M10 14 A 1.1 1, 0, 0 0, 25 14 M25 14 A 1.2 1, 0, 0 0, 40 14 ")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M10 7 A 1.2 1, 0, 0 0, 10 14 M40 7 A 1.2 1, 0, 1 1, 40 14  ")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M10 7 L40 7 L40 14 L10 15")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+// Cloud 2
+svg.append("path")
+                .attr("d", "M110 7 A 1.2 1, 0, 1 1, 125 7 M125 7 A 1.1 1, 0, 1 1, 140 7 ")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M110 14 A 1.1 1, 0, 0 0, 125 14 M125 14 A 1.2 1, 0, 0 0, 140 14")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M110 7 A 1.2 1, 0, 0 0, 110 14 M140 7 A 1.2 1, 0, 1 1, 140 14 ")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+svg.append("path")
+                .attr("d", "M110 7 L140 7 L140 14 L110 15")
+                .attr("stroke", "white")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");       
+// sun
+svg.append("circle")
+                .attr("cx", "180")
+                .attr("cy", "10")
+                .attr("r", "4.5")
+                .attr("stroke", "yellow")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "yellow");       
+
+svg.append("path")
+                .attr("d", "M180 5 L180 2 M183 6 L186 4 M185 9 h4 M184.2 12.5 L187.5 13.5  M180 15 v3.3 M176 12.5 L173 14.5 M175 9 h-4 M177 6 L175 3")
+                .attr("stroke", "yellow")
+                .attr("stroke-width", 0.4)
+                .attr("fill", "none");       
+ // Chakwal Board
+svg.append("path")
+                .attr("d", "M192 72 h1 v8 h-1 v-8")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "white");                 
+svg.append("circle")
+                .attr("cx", "192.4")
+                .attr("cy", "68")
+                .attr("r", "4.5")
+                .attr("stroke", "royalblue")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "royalblue");  
+svg.append("text")
+                .attr("x", "188.8")
+                .attr("y", "67")
+                .attr('font-size','0.12em')
+                .attr('fill','white')
+                .text("Chakwal")
+svg.append("text")
+                .attr("x", "189.4")
+                .attr("y", "69")
+                .attr('font-size','0.08em')
+                .attr('fill','white')
+                .attr('font-family','Arial')
+                .text("126.3 km")
+// road direction
+
+svg.append("path")
+                .attr("d", "M10 85 h20 v-4 L40 88 L30 94 v-4 h-20 v-5 ")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+          
+                .attr("fill", "url(#DirectionOfRoad)");       
+
+svg.append("path")
+                .attr("d", "M125 85 h20 v-4 L155 88 L145 94 v-4 h-20 v-5 ")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#DirectionOfRoad)");       
+// road rain
+svg.append("path")
+                .attr("d", "M20 95 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#roadch1)"); 
+svg.append("path")
+                .attr("d", "M34 95 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#roadch)"); 
+svg.append("path")
+                .attr("d", "M118 95 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#roadch1)"); 
+svg.append("path")
+                .attr("d", "M134 95 l-1 -1.5 l-1 1.5 a 1 1.3, 0, 0 0, 1.9 0")
+                .attr("stroke", "none")
+                .attr("stroke-width", 0.3)
+                .attr("fill", "url(#roadch)"); 
+
+
+</script>
+</body>
+</html>
